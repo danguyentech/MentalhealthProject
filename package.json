@@ -1,18 +1,22 @@
 {
-  "name": "backend",
+  "name": "mentalhealthproject",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.6",
-    "pouchdb": "^7.2.2"
-  },
-  "devDependencies": {},
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "install": "npm run install-server",
+    "install-server": "cd server && npm install",
+    "start": "cd server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danguyentech/MentalhealthProject.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danguyentech/MentalhealthProject/issues"
+  },
+  "homepage": "https://github.com/danguyentech/MentalhealthProject#readme"
 }

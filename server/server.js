@@ -118,11 +118,15 @@ const allResources=[
     writtenResources,
     extraResources
 ]
-let server = app.listen(8081, function () {
-        let port = server.address().port;
-        console.log('Server started on:' + port)
-    })
-    
+
 app.get('/resources', function (req, res) {
     res.send(allResources)
+})
+
+app.use(express.static("../website"))
+
+let port = process.env.PORT || 3000
+let server = app.listen(port, function () {
+    let port = server.address().port;
+    console.log('Server started on:' + port)
 })
