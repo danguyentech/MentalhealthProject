@@ -1,5 +1,9 @@
 let overallStress = 0;
 let questionValue = 0;
+let width = 0;
+let stressColor = '';
+let resourceResults=[];
+
 let questions = [
     'Have you eaten in the last three hours?',
     'Have you showered in the past day?',
@@ -18,24 +22,177 @@ let questions = [
     'Have you waited a week?'
 ];
 
+
 function nextQuestion(answerValue) {
+    let questionText = document.getElementById('questionText');
     let question = document.getElementById('question');
-    let x = document.getElementsByTagName('input');
+    let progress = document.getElementById('progressFill');
+
     overallStress += answerValue;
     questionValue++;
-    question.style.animation = 'fade-out-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both';
+    width += 7;
+    progress.style.width = width + '%';
+    question.classList.add('fade-out-bottom');
     setTimeout(next, 100)
     function next() {
         if (questionValue >= questions.length) {
-            document.getElementById('questionText').textContent = 'Your Stress Score is' + ' ' + overallStress;
-            for (y = 0; y < x.length; y++) {
-                x[y].style.display = 'none';
-            }
-            question.style.animation = 'fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both'
+            results();
         }
         else {
-            document.getElementById('questionText').textContent = questions[questionValue - 1];
-            question.style.animation = 'fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both'
+            questionText.textContent = questions[questionValue - 1];
+            question.classList.remove('fade-out-bottom')
+            if(questionValue==11){
+                document.getElementById('answer1').setAttribute('onclick', 'nextQuestion(1)')
+                document.getElementById('answer2').setAttribute('onclick', 'nextQuestion(0)')
+            }
         }
     }
 }
+
+function results() {
+    let input = document.getElementsByTagName('input');
+    let color = document.getElementById('colorText');
+    let progress = document.getElementById('progressFill');
+
+    progress.textContent = 'Done!';
+    questionText.textContent = 'Your Stress Score is' + ' ' + overallStress;
+    progress.style.width = '100%';
+    for (y = 0; y < input.length; y++) {
+        input[y].classList.add('d-none');
+    }
+    question.classList.remove('fade-out-bottom')
+    document.getElementById('stressBar').classList.remove('d-none')
+    document.getElementById('recommendDiv').classList.remove('d-none');
+    switch (overallStress) {
+        case 0:
+        case 0.5:
+        case 1:
+        case 1.5:
+        case 2:
+            color.textContent = 'Violet';
+            color.style.color = 'violet';
+            stressColor = 'Violet';
+            break;
+        case 2.5:
+        case 3:
+        case 3.5:
+            color.textContent = 'Indigo';
+            color.style.color = 'indigo';
+            stressColor = 'Indigo';
+            break;
+        case 4:
+        case 4.5:
+        case 5:
+        case 5.5:
+        case 6:
+            color.textContent = 'Blue';
+            color.style.color = 'blue';
+            stressColor = 'Blue';
+            break;
+        case 6.5:
+        case 7:
+        case 7.5:
+        case 8:
+        case 8.5:
+        case 9:
+            color.textContent = 'Green';
+            color.style.color = 'green';
+            stressColor = 'Green';
+            break;
+        case 9.5:
+        case 10:
+        case 10.5:
+        case 11:
+            color.textContent = 'Yellow';
+            color.style.color = 'yellow';
+            stressColor = 'Yellow';
+            break;
+        case 11.5:
+        case 12:
+        case 12.5:
+        case 13:
+        case 13.5:
+            color.textContent = 'Orange';
+            color.style.color = 'orange';
+            stressColor = 'Orange';
+            break;
+        case 14:
+        case 14.5:
+        case 15:
+            color.textContent = 'Red';
+            color.style.color = 'red';
+            stressColor = 'Red';
+            break;
+    }
+    overallStress /= 15
+    overallStress *= 100
+    document.getElementById('indicator').style.width = overallStress + '%'
+    fetch('/resources')
+        .then(response => response.json())
+        .then(resources => {
+            console.log(resources);
+            buildResources(resources);
+        })
+}
+
+function buildResources(resources) {
+    for (x = 0; x < resources.length; x++) {
+        searchResource(resources[x])
+    }
+    console.log(resourceResults);
+    let randomNumber1=Math.floor(Math.random()*resourceResults.length+1)
+    console.log(randomNumber1)
+    let chosenResult1=resourceResults.slice(randomNumber1-1,randomNumber1);
+    console.log(chosenResult1);
+    resourceResults.splice(randomNumber1-1,randomNumber1);
+    console.log(resourceResults);
+    let randomNumber2=Math.floor(Math.random()*resourceResults.length+1)
+    console.log(randomNumber2)
+    let chosenResult2=resourceResults.slice(randomNumber2-1,randomNumber2);
+    console.log(chosenResult2);
+    let resourceList1 = document.getElementById('resource1')
+    let resourceList2 = document.getElementById('resource2')
+    let resourceDiv1 = makeResource(chosenResult1[0])
+    let resourceDiv2 = makeResource(chosenResult2[0])
+    resourceList1.appendChild(resourceDiv1)
+    resourceList2.appendChild(resourceDiv2)
+}
+
+function searchResource(resourceChoice) {
+    resourceChoice.filter(function (resource) {
+        let resourceTest = Object.values(resource)
+        if (resourceTest.includes(stressColor)) {
+            resourceResults.push(resource);
+        }
+    })
+}
+
+function makeResource(resource) {
+    let resourceDiv = document.createElement('div')
+
+    let resourceName = document.createElement('h3')
+    resourceName.textContent = resource.name
+
+    let description = document.createElement('p')
+    description.textContent = resource.description
+
+    let link = document.createElement('a')
+    link.setAttribute('href', resource.link)
+    link.textContent = resource.link
+
+    let phone= document.createElement('a')
+    phone.setAttribute('href', 'tel:'+resource.phone)
+    phone.textContent = resource.phone
+
+    resourceDiv.appendChild(resourceName)
+    resourceDiv.appendChild(description)
+    resourceDiv.appendChild(link)
+    resourceDiv.appendChild(document.createElement('br'))
+    resourceDiv.appendChild(phone)
+
+    return resourceDiv
+}
+
+
+
+
