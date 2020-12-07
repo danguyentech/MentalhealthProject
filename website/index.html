@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/utilities.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/utilities.css">
     <title>MentalHealthYYC</title>
 </head>
+
 <body>
     <!-- Navbar -->
     <div class="navbar">
         <div class="container flex">
-            <h1 class="logo">MentalHealthYYC.</h1>
+            <h1 class="logo">MentalHealthYYC</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -21,7 +23,7 @@
             </nav>
         </div>
     </div>
-    
+
     <!-- Showcase -->
     <section class="showcase">
         <div class="container grid">
@@ -30,10 +32,9 @@
                 <p>Try it yourself - FREE!</p>
                 <a href="features.html" class="btn btn-outline">Start here</a>
             </div>
-
             <div class="showcase-form card">
                 <h2>Contact us</h2>
-                 <!--  <form name="contact" netlify-honeypot="bot-field" method="POST" data-netlify="true">
+                <!--  <form name="contact" netlify-honeypot="bot-field" method="POST" data-netlify="true">
                     <input type="hidden" name="form-name" value="contact">
                     <p class="hidden">
                         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
@@ -49,7 +50,7 @@
                     </div>
                     <input type="submit" value="Send" class="btn btn-primary">
                 </form> -->
-                 <form>
+                <form>
                     <div class="form-control">
                         <input type="text" name="name" placeholder="Name" required>
                     </div>
@@ -69,16 +70,31 @@
     <section class="stats">
         <div class="container">
             <h3 class="stats-heading text-center my-1">
-                "COVID-19 is having a negative impact on Canadians’ mental health, with many seeing their stress levels double
-since the onset of the pandemic. People are struggling with fear and uncertainty about their own health and their loved ones’ health, concerns about employment and finances, and the social isolation that comes from public health measures such as quarantining and physical distancing. A recent poll found that 50% of Canadians reported worsening mental health since the pandemic began with many feeling worried (44%) and anxious (41%). One in 10 Canadians polled said that their mental health had worsened ‘a lot’ as a result of COVID-19.
-Similar results were found in a survey of Canadian workers, where 81% reported that the pandemic is negatively impacting their mental health, indicating a significant drop in overall worker mental health since the beginning of COVID-19. Substance use is also on the rise in Canada during COVID-19. A recent poll found that 25% of Canadians aged 35-54 and 21% of those aged 18-34 have increased their alcohol consumption since social distancing and selfisolation due to COVID-19 began. Another study found that Canadians who described their mental health as ‘fair’ or ‘poor’ were more likely than those with better mental health to have increased their use of alcohol,
-cannabis and tobacco during the early stages of the pandemic." -Center for Addiction and Mental Health, 2020
+                <div>"COVID-19 is having a negative impact on Canadians’ mental health, with many seeing their stress levels double
+                since the onset of the pandemic.</div>
+                <div>People are struggling with fear and uncertainty about their own health
+                and their loved ones’ health, concerns about employment and finances, and the social isolation that
+                comes from public health measures such as quarantining and physical distancing. </div>
+                <div>A recent poll found that
+                50% of Canadians reported worsening mental health since the pandemic began with many feeling worried
+                (44%) and anxious (41%). One in 10 Canadians polled said that their mental health had worsened ‘a lot’
+                as a result of COVID-19.</div>
+               <div>Similar results were found in a survey of Canadian workers, where 81% reported that the pandemic is
+                negatively impacting their mental health, indicating a significant drop in overall worker mental health
+                since the beginning of COVID-19.</div>
+                <div>Substance use is also on the rise in Canada during COVID-19. A recent
+                poll found that 25% of Canadians aged 35-54 and 21% of those aged 18-34 have increased their alcohol
+                consumption since social distancing and self isolation due to COVID-19 began. Another study found that
+                Canadians who described their mental health as ‘fair’ or ‘poor’ were more likely than those with better
+                mental health to have increased their use of alcohol,
+                cannabis and tobacco during the early stages of the pandemic." -Center for Addiction and Mental Health,
+                2020</div>
             </h3>
 
             <div class="grid grid-3 text-center my-4">
                 <div>
                     <i class="fas fa-server fa-3x"></i>
-                    <h3>281, 0000 (Updated: xx)</h3>
+                    <h3>281,000 (Updated:<span id='date'></span>)</h3>
                     <p class="text-secondary">CASES OF COVID-19</p>
                 </div>
                 <div>
@@ -110,8 +126,13 @@ cannabis and tobacco during the early stages of the pandemic." -Center for Addic
                     <li><a href="docs.html">Docs</a></li>
                 </ul>
             </nav>
-            </div>
+        </div>
         </div>
     </footer>
+    <script>
+        var d = new Date();
+document.getElementById("date").innerHTML = d.toUTCString();
+    </script>
 </body>
+
 </html>
