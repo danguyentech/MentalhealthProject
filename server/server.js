@@ -142,7 +142,7 @@ const allResources=[
     extraResources
 ]
 
-app.get('/resources', function (req, res) {
+app.get('/api/resources', function (req, res) {
     res.send(allResources)
 })
 

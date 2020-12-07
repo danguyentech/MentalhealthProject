@@ -17,7 +17,8 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  color: #333;
+  background: linear-gradient(140deg, rgba(95,175,255,1) 0%, rgba(4,122,237,1) 29%, rgba(4,122,237,1) 80%, rgba(230,125,21,1) 87%);
+  color: white;
   line-height: 1.6;
 }
 
@@ -59,7 +60,6 @@ pre {
 
 /* Navbar */
 .navbar {
-  background-color: var(--primary-color);
   color: #fff;
   height: 70px;
 }
@@ -85,7 +85,6 @@ pre {
 /* Showcase */
 .showcase {
   height: 400px;
-  background-color: var(--primary-color);
   color: #fff;
   position: relative;
 }
@@ -105,7 +104,7 @@ pre {
 }
 
 .showcase-text {
-  animation: slideInFromLeft 1s ease-in;
+  animation: slideInFromLeft 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both ;
 }
 
 .showcase-form {
@@ -116,7 +115,7 @@ pre {
   padding: 40px;
   z-index: 100;
   justify-self: flex-end;
-  animation: slideInFromRight 1s ease-in;
+  animation: slideInFromRight 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both ;
 }
 
 .showcase-form .form-control {
@@ -136,29 +135,13 @@ pre {
   outline: none;
 }
 
-.showcase::before,
-.showcase::after {
-  content: '';
-  position: absolute;
-  height: 100px;
-  bottom: -70px;
-  right: 0;
-  left: 0;
-  background: #fff;
-  transform: skewY(-3deg);
-  -webkit-transform: skewY(-3deg);
-  -moz-transform: skewY(-3deg);
-  -ms-transform: skewY(-3deg);
-}
-
 /* Stats */
 .stats {
   padding-top: 100px;
-  animation: slideInFromBottom 1s ease-in;
+  animation: slideInFromBottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .stats-heading {
-  max-width: 500px;
   margin: auto;
 }
 
@@ -263,43 +246,52 @@ pre {
 }
 
 /* Animations */
+/* Animations */
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-100px);
+    opacity:0;
   }
 
   100% {
     transform: translateX(0);
+    opacity:1;
   }
 }
 
 @keyframes slideInFromRight {
   0% {
-    transform: translateX(100%);
+    transform: translateX(100px);
+    opacity:0;
   }
 
   100% {
     transform: translateX(0);
+    opacity:1;
   }
 }
 
 @keyframes slideInFromTop {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-100px);
+    opacity:0;
   }
 
   100% {
     transform: translateX(0);
+    opacity:1;
   }
 }
 
 @keyframes slideInFromBottom {
   0% {
-    transform: translateY(100%);
+    transform: translateY(100px);
+    opacity:0;
   }
 
   100% {
     transform: translateX(0);
+    opacity:1;
   }
 }
 
@@ -323,13 +315,13 @@ pre {
   .showcase-text {
     text-align: center;
     margin-top: 40px;
-    animation: slideInFromTop 1s ease-in;
+    animation: slideInFromLeft 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both ;
   }
-
+  
   .showcase-form {
     justify-self: center;
     margin: auto;
-    animation: slideInFromBottom 1s ease-in;
+    animation: slideInFromRight 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both ;
   }
 
   .cli .grid > *:first-child {
