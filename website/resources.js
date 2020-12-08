@@ -33,6 +33,7 @@ function getInfo(info) {
       [name: 'Substance Use and Addiction']
       [name: 'Trauma']
       [name: 'Chronic Pain']
+      [name: 'Chronic Illness']
       [name: 'Loneliness']
       [name: 'Eating Disorders']
       [name: 'Suicide Prevention']
