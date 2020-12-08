@@ -23,3 +23,14 @@ function getInfo(info) {
   function hoverEnd(card){
     document.getElementById(card).style.backgroundColor='#B6A9F0';
   }
+
+  function filterResources() {
+      [name: 'Depression'],
+      [name: 'Anxiety'],
+      [name: 'Stress']
+      [name: 'Mindfulness']
+      [name: 'Productivity']
+      [name: 'Anger']
+
+
+  }
