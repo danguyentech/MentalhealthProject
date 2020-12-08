@@ -30,7 +30,20 @@ function getInfo(info) {
       [name: 'Stress']
       [name: 'Mindfulness']
       [name: 'Productivity']
-      [name: 'Anger']
+      [name: 'Substance Use and Addiction']
+      [name: 'Trauma']
+      [name: 'Chronic Pain']
+      [name: 'Loneliness']
+      [name: 'Eating Disorders']
+      [name: 'Suicide Prevention']
 
+      // Self-Management, Cognitive Modification, Skills Training, Illness Management, Passive Symptom Tracking
 
   }
+
+  let filterResources = info.filter(info => info.card {
+    return info.
+  }
+
+  console.log(filterResources)
+
