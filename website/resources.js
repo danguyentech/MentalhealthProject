@@ -25,17 +25,17 @@ function getInfo(info) {
   }
 
   function filterResources() {
-      [name: 'Depression'],
-      [name: 'Anxiety'],
-      [name: 'Stress']
-      [name: 'Mindfulness']
-      [name: 'Productivity']
-      [name: 'Substance Use and Addiction']
-      [name: 'Trauma']
-      [name: 'Chronic Pain']
-      [name: 'Loneliness']
-      [name: 'Eating Disorders']
-      [name: 'Suicide Prevention']
+      name: 'Depression'
+      name: 'Anxiety'
+      name: 'Stress'
+      name: 'Mindfulness'
+      name: 'Productivity'
+      name: 'Substance Use and Addiction'
+      name: 'Trauma'
+      name: 'Chronic Pain'
+      name: 'Loneliness'
+      name: 'Eating Disorders'
+      name: 'Suicide Prevention'
 
       // Self-Management, Cognitive Modification, Skills Training, Illness Management, Passive Symptom Tracking
 
