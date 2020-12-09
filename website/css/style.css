@@ -17,8 +17,6 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(140deg, rgba(95,175,255,1) 0%, rgba(4,122,237,1) 29%, rgba(4,122,237,1) 80%, rgba(230,125,21,1) 87%);
-  color: white;
   line-height: 1.6;
 }
 
@@ -28,21 +26,19 @@ ul {
 
 a {
   text-decoration: none;
-  color: #333;
 }
 
 h1,
 h2 {
+  color: #fff;
   font-weight: 300;
   line-height: 1.2;
   margin: 10px 0;
   font-size: 2em;
 }
-
 p {
   margin: 10px 0;
 }
-
 img {
   width: 100%;
 }
@@ -61,7 +57,7 @@ pre {
 
 /* Navbar */
 .navbar {
-  color: #fff;
+  background-color: var(--primary-color);
   height: 70px;
 }
 
@@ -75,7 +71,7 @@ pre {
   margin: 0 5px;
 }
 
-.navbar a:hover {
+ul a:hover {
   border-bottom: 2px #fff solid;
   text-decoration: none;
 }
@@ -87,6 +83,7 @@ pre {
 /* Showcase */
 .showcase {
   height: 400px;
+  background-color: var(--primary-color);
   color: #fff;
   position: relative;
 }
@@ -135,6 +132,21 @@ pre {
 
 .showcase-form input:focus {
   outline: none;
+}
+
+.showcase::before,
+.showcase::after {
+  content: '';
+  position: absolute;
+  height: 100px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background: #fff;
+  transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
 }
 
 /* Stats */
