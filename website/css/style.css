@@ -30,7 +30,7 @@ a {
 
 h1,
 h2 {
-  color: #fff;
+  
   font-weight: 300;
   line-height: 1.2;
   margin: 10px 0;
@@ -54,7 +54,6 @@ pre {
   visibility: hidden;
   height: 0;
 }
-
 /* Navbar */
 .navbar {
   background-color: var(--primary-color);
@@ -70,7 +69,9 @@ pre {
   padding: 10px;
   margin: 0 5px;
 }
-
+a:hover{
+  text-decoration: none;
+}
 ul a:hover {
   border-bottom: 2px #fff solid;
   text-decoration: none;

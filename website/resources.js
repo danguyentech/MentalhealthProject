@@ -7,5 +7,6 @@ function filterResources() {
       } else {
           element.classList.remove("hidden");
       }
-
+    }
+}
 // Self-Management, Cognitive Modification, Skills Training, Illness Management, Passive-Symptom Tracking
