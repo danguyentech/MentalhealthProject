@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-const audioResources = [
+const depressionResources = [
     {
         color1:'Red',
         color2: 'Green',
@@ -15,17 +15,10 @@ const audioResources = [
         name: 'Train the Mind',
         description: 'A daily podcast about mental wellness',
         link: 'https://open.spotify.com/show/5ulnZFwoLkEv566YCZwTvY',
-    },
-    {
-        color1: 'Yellow',
-        color2: 'Indigo',
-        name: 'Coffitivity',
-        description: 'A website that plays coffee shop sounds to help with focus',
-        link: 'https://coffitivity.com',
     }
 ]
 
-const videoResources = [
+const AnxietyResources = [
     {
         color1: 'Red',
         color2: 'Violet',
@@ -38,16 +31,10 @@ const videoResources = [
         name: '10-Minute Yoga For Self Care - Yoga With Adriene',
         description: '10 min Yoga For Self Care invites you to take 10 min of your day to practice self care and love of self. We spend a lot of time on our phones, computers, in traffic, working, and taking care of others. Take TEN to tend to your mind and body with this practice that combines yoga asana, breath, and massage.',
         link: 'https://youtu.be/VpW33Celubg?list=PLui6Eyny-UzwiUzvhM2BjxThodiRWZ2JR',
-    },
-    {
-        color1: 'Yellow',
-        name: 'The gift and power of emotional courage TedTalk',
-        description: 'Psychologist Susan David shares how the way we deal with our emotions shapes everything that matters: our actions, careers, relationships, health and happiness. In this deeply moving, humorous and potentially life-changing talk, she challenges a culture that prizes positivity over emotional truth and discusses the powerful strategies of emotional agility. A talk to share.',
-        link: 'https://www.ted.com/talks/susan_david_the_gift_and_power_of_emotional_courage?referrer=playlist-how_to_practice_emotional_first_aid',
     }
 ]
 
-const phoneResources = [
+const stressResources = [
     {
         color1: 'Green',
         name: 'CANADIAN MENTAL HEALTH ASSOCIATION (CMHA)',
@@ -61,22 +48,10 @@ const phoneResources = [
         description: 'The Distress Centre is a 24-hour crisis line available in Calgary and Southern Alberta. This resource is useful if you need someone to talk to or recommended resources when you are in a crisis situation. The best way to describe the Distress Centre is to use their own words: “We do not define crisis. We do not judge. Anyone can call us day or night.” The Distress Centre can be contacted by phone, email or online chat during the day.',
         link: 'https://www.distresscentre.com/',
         phone: '403-266-4357',
-    },
-    {
-        color1: 'Indigo',
-        name: 'ADDICTION HELPLINE',
-        description: 'The Addiction Helpline is available 24/7 and is available for any Albertan suffering from addiction. The helpline is confidential and provides support and referral to community services for individuals suffering from alcohol, drug and gambling issues.',
-        phone: '1-866-332-2322',
-    },
-    {
-        color1: 'Violet',
-        name: 'URGENT MENTAL HEALTH IN URGENT CARE',
-        description: 'Crisis mental health assessment and support is available at two of the Urgent Care Centres in Calgary:<br>Sheldon M. Chumir Health Centre (SMCHC), located in the Beltline<br>South Calgary Health Centre (SCHC), located in the far south near Shawnessy/Sundance<br>Both centres are open 7 days per week, every day of the year, with SMCHC being open 24 hours per day and SCHC open from 8 am – 10 pm. Urgent Mental Health assistance is available at both sites from 8 am – 10 pm every day. SCHC also provides walk-in, single session counselling at no fee with variable hours during the week.',
-        phone: '403-943-9300',
     }
 ]
 
-const websiteResources = [
+const mindfulnessResources = [
     {
         color1: 'Green',
         name: 'Depression chat rooms',
@@ -88,16 +63,10 @@ const websiteResources = [
         name: 'Turn2Me.ie',
         description: 'We are a community of fully qualified and accredited mental health professionals working online to provide a high quality, safe, anonymous and confidential space for you to gain support - wherever you are, whenever you need us, for whatever you are going through.',
         link: 'https://turn2me.ie',
-    },
-    {
-        color1: 'Indigo',
-        name: 'The Good Limbo mental health community',
-        description: 'The Good Limbo is an online mental health community for peer based support. We have forums and a Discord chat server where you can talk to others who understand. Whether you want to seek support, or just need a distraction, we’re here for you.',
-        link: 'https://thegoodlimbo.com',
     }
 ]
 
-const writtenResources = [
+const productivityResources = [
     {
         color1: 'Violet',
         name: 'Stress.org Blog',
@@ -112,7 +81,7 @@ const writtenResources = [
     }
 ]
 
-const extraResources = [
+const substanceuseResources = [
     {
         color1: 'Red',
         name: 'Superbetter',
@@ -124,7 +93,56 @@ const extraResources = [
         name: "Checkpoint's List of Games for wellbeing",
         description: 'A collection of games voted by people that have helped them with their mental wellbeing.',
         link: 'https://checkpointorg.com/games-for-health/',
-    },
+    }
+]
+
+const traumaResources = [
+    {
+        color1: 'Violet',
+        name: 'URGENT MENTAL HEALTH IN URGENT CARE',
+        description: 'Crisis mental health assessment and support is available at two of the Urgent Care Centres in Calgary:<br>Sheldon M. Chumir Health Centre (SMCHC), located in the Beltline<br>South Calgary Health Centre (SCHC), located in the far south near Shawnessy/Sundance<br>Both centres are open 7 days per week, every day of the year, with SMCHC being open 24 hours per day and SCHC open from 8 am – 10 pm. Urgent Mental Health assistance is available at both sites from 8 am – 10 pm every day. SCHC also provides walk-in, single session counselling at no fee with variable hours during the week.',
+        phone: '403-943-9300',
+    }
+]
+
+const chronicPainResources = [
+    {
+        color1: 'Yellow',
+        color2: 'Indigo',
+        name: 'Coffitivity',
+        description: 'A website that plays coffee shop sounds to help with focus',
+        link: 'https://coffitivity.com',
+    }
+]
+
+const chronicIllnessResources = [
+    {
+        color1: 'Yellow',
+        name: 'The gift and power of emotional courage TedTalk',
+        description: 'Psychologist Susan David shares how the way we deal with our emotions shapes everything that matters: our actions, careers, relationships, health and happiness. In this deeply moving, humorous and potentially life-changing talk, she challenges a culture that prizes positivity over emotional truth and discusses the powerful strategies of emotional agility. A talk to share.',
+        link: 'https://www.ted.com/talks/susan_david_the_gift_and_power_of_emotional_courage?referrer=playlist-how_to_practice_emotional_first_aid',
+    }
+]
+
+const lonelinessResources = [
+    {
+        color1: 'Indigo',
+        name: 'ADDICTION HELPLINE',
+        description: 'The Addiction Helpline is available 24/7 and is available for any Albertan suffering from addiction. The helpline is confidential and provides support and referral to community services for individuals suffering from alcohol, drug and gambling issues.',
+        phone: '1-866-332-2322',
+    }
+]
+
+const eatingDisordersResources = [
+    {
+        color1: 'Indigo',
+        name: 'The Good Limbo mental health community',
+        description: 'The Good Limbo is an online mental health community for peer based support. We have forums and a Discord chat server where you can talk to others who understand. Whether you want to seek support, or just need a distraction, we’re here for you.',
+        link: 'https://thegoodlimbo.com',
+    }
+]
+
+const suicidePreventionResources = [
     {
         color1: 'Yellow',
         name: 'University of Calgary Mindfulness Online',
@@ -134,12 +152,18 @@ const extraResources = [
 ]
 
 const allResources=[
-    audioResources,
-    videoResources,
-    phoneResources,
-    websiteResources,
-    writtenResources,
-    extraResources
+    depressionResources,
+    AnxietyResources,
+    stressResources,
+    mindfulnessResources,
+    productivityResources,
+    substanceuseResources,
+    traumaResources,
+    chronicPainResources,
+    chronicIllnessResources,
+    lonelinessResources,
+    eatingDisordersResources,
+    suicidePreventionResources
 ]
 
 app.get('/api/resources', function (req, res) {

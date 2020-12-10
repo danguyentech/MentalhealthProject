@@ -69,14 +69,14 @@ function results() {
         case 1:
         case 1.5:
         case 2:
-            color.textContent = 'Violet';
+            color.textContent = 'minimal';
             color.style.color = 'violet';
             stressColor = 'Violet';
             break;
         case 2.5:
         case 3:
         case 3.5:
-            color.textContent = 'Indigo';
+            color.textContent = 'minor';
             color.style.color = 'indigo';
             stressColor = 'Indigo';
             break;
@@ -85,7 +85,7 @@ function results() {
         case 5:
         case 5.5:
         case 6:
-            color.textContent = 'Blue';
+            color.textContent = 'low';
             color.style.color = 'blue';
             stressColor = 'Blue';
             break;
@@ -95,7 +95,7 @@ function results() {
         case 8:
         case 8.5:
         case 9:
-            color.textContent = 'Green';
+            color.textContent = 'moderate';
             color.style.color = 'green';
             stressColor = 'Green';
             break;
@@ -103,7 +103,7 @@ function results() {
         case 10:
         case 10.5:
         case 11:
-            color.textContent = 'Yellow';
+            color.textContent = 'higher than average';
             color.style.color = 'yellow';
             stressColor = 'Yellow';
             break;
@@ -112,14 +112,14 @@ function results() {
         case 12.5:
         case 13:
         case 13.5:
-            color.textContent = 'Orange';
+            color.textContent = 'moderately high';
             color.style.color = 'orange';
             stressColor = 'Orange';
             break;
         case 14:
         case 14.5:
         case 15:
-            color.textContent = 'Red';
+            color.textContent = 'high';
             color.style.color = 'red';
             stressColor = 'Red';
             break;
