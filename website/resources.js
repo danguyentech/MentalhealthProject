@@ -1,3 +1,16 @@
+let category = [
+    'depression',
+    'anxiety',
+    'stress',
+    'mindfulness',
+    'substanceuse',
+    'trauma',
+    'chronicpain',
+    'loneliness',
+    'eatingdisorders',
+    'suicide'
+]
+
 function filterResources() {
     let selection = document.getElementById("resourceDropDown");
     let resources = document.getElementsByClassName("resource");
@@ -11,32 +24,21 @@ function filterResources() {
 }
 // Self-Management, Cognitive Modification, Skills Training, Illness Management, Passive-Symptom Tracking
 
-function fetchResources(){
+function fetchResources() {
     fetch('/api/resources')
-    .then(response => response.json())
-    .then(resources => {
-        console.log(resources);
-        readResources(resources);
-    })
+        .then(response => response.json())
+        .then(resources => {
+            console.log(resources);
+            for (x = 0; x < resources.length; x++) {
+                buildResources(resources[x], category[x])
+            }
+        })
 }
 
-function readResources(resources) {
-    for (x = 0; x < resources.length; x++) {
-        processResources(resources[x])
-    }
-}
-
-function processResources(resources) {
-    console.log(resources);
-    for (y = 0; y < resources.length; y++) {
-        buildResources(resources[y])
-    }
-}
-
-function buildResources(resources) {
-    let resourceList=document.getElementById('depression')
+function buildResources(resources, category) {
+    let resourceList = document.getElementById(category)
     for (resource = 0; resource < resources.length; resource++) {
-        let resourceChild=makeResource(resources[resource])
+        let resourceChild = makeResource(resources[resource])
         resourceList.appendChild(resourceChild)
     }
 }
@@ -54,8 +56,8 @@ function makeResource(resource) {
     link.setAttribute('href', resource.link)
     link.textContent = resource.link
 
-    let phone= document.createElement('a')
-    phone.setAttribute('href', 'tel:'+resource.phone)
+    let phone = document.createElement('a')
+    phone.setAttribute('href', 'tel:' + resource.phone)
     phone.textContent = resource.phone
 
     resourceDiv.appendChild(resourceName)

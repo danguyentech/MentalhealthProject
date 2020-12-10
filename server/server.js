@@ -66,21 +66,6 @@ const mindfulnessResources = [
     }
 ]
 
-const productivityResources = [
-    {
-        color1: 'Violet',
-        name: 'Stress.org Blog',
-        description: 'A series of blogposts about stress and stress management',
-        link: 'https://www.stress.org/blog',
-    },
-    {
-        color1: 'Orange',
-        name: 'CMHA blog',
-        description: 'Balance is CMHA Calgary mental health blog, which aims to raise awareness, provide hope, build community and promote mental wellness through personal stories, mental health tips and information, expert opinions and community insights.',
-        link: 'https://cmha.calgary.ab.ca/balance-blog/',
-    }
-]
-
 const substanceuseResources = [
     {
         color1: 'Red',
@@ -102,6 +87,12 @@ const traumaResources = [
         name: 'URGENT MENTAL HEALTH IN URGENT CARE',
         description: 'Crisis mental health assessment and support is available at two of the Urgent Care Centres in Calgary:<br>Sheldon M. Chumir Health Centre (SMCHC), located in the Beltline<br>South Calgary Health Centre (SCHC), located in the far south near Shawnessy/Sundance<br>Both centres are open 7 days per week, every day of the year, with SMCHC being open 24 hours per day and SCHC open from 8 am – 10 pm. Urgent Mental Health assistance is available at both sites from 8 am – 10 pm every day. SCHC also provides walk-in, single session counselling at no fee with variable hours during the week.',
         phone: '403-943-9300',
+    },
+    {
+        color1: 'Orange',
+        name: 'CMHA blog',
+        description: 'Balance is CMHA Calgary mental health blog, which aims to raise awareness, provide hope, build community and promote mental wellness through personal stories, mental health tips and information, expert opinions and community insights.',
+        link: 'https://cmha.calgary.ab.ca/balance-blog/',
     }
 ]
 
@@ -112,16 +103,13 @@ const chronicPainResources = [
         name: 'Coffitivity',
         description: 'A website that plays coffee shop sounds to help with focus',
         link: 'https://coffitivity.com',
-    }
-]
-
-const chronicIllnessResources = [
+    },
     {
-        color1: 'Yellow',
-        name: 'The gift and power of emotional courage TedTalk',
-        description: 'Psychologist Susan David shares how the way we deal with our emotions shapes everything that matters: our actions, careers, relationships, health and happiness. In this deeply moving, humorous and potentially life-changing talk, she challenges a culture that prizes positivity over emotional truth and discusses the powerful strategies of emotional agility. A talk to share.',
-        link: 'https://www.ted.com/talks/susan_david_the_gift_and_power_of_emotional_courage?referrer=playlist-how_to_practice_emotional_first_aid',
-    }
+        color1: 'Violet',
+        name: 'Stress.org Blog',
+        description: 'A series of blogposts about stress and stress management',
+        link: 'https://www.stress.org/blog',
+    },
 ]
 
 const lonelinessResources = [
@@ -130,6 +118,12 @@ const lonelinessResources = [
         name: 'ADDICTION HELPLINE',
         description: 'The Addiction Helpline is available 24/7 and is available for any Albertan suffering from addiction. The helpline is confidential and provides support and referral to community services for individuals suffering from alcohol, drug and gambling issues.',
         phone: '1-866-332-2322',
+    },
+    {
+        color1: 'Yellow',
+        name: 'The gift and power of emotional courage TedTalk',
+        description: 'Psychologist Susan David shares how the way we deal with our emotions shapes everything that matters: our actions, careers, relationships, health and happiness. In this deeply moving, humorous and potentially life-changing talk, she challenges a culture that prizes positivity over emotional truth and discusses the powerful strategies of emotional agility. A talk to share.',
+        link: 'https://www.ted.com/talks/susan_david_the_gift_and_power_of_emotional_courage?referrer=playlist-how_to_practice_emotional_first_aid',
     }
 ]
 
@@ -156,11 +150,9 @@ const allResources=[
     AnxietyResources,
     stressResources,
     mindfulnessResources,
-    productivityResources,
     substanceuseResources,
     traumaResources,
     chronicPainResources,
-    chronicIllnessResources,
     lonelinessResources,
     eatingDisordersResources,
     suicidePreventionResources
