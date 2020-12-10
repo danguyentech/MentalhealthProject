@@ -150,6 +150,14 @@ ul a:hover {
   -ms-transform: skewY(-3deg);
 }
 
+.info{
+  display: flex;
+}
+
+.picture{
+  width: 500px;
+  height: 300px;
+}
 /* Stats */
 .stats {
   padding-top: 100px;
