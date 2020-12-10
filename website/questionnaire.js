@@ -55,7 +55,7 @@ function results() {
     let progress = document.getElementById('progressFill');
 
     progress.textContent = 'Done!';
-    questionText.textContent = 'Your Stress Score is' + ' ' + overallStress;
+    questionText.style.display='none'
     progress.style.width = '100%';
     for (y = 0; y < input.length; y++) {
         input[y].classList.add('d-none');

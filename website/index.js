@@ -1,3 +1,4 @@
+
 function checkPosition() {
     let elements= document.querySelectorAll('.hidden');
     let windowHeight = window.innerHeight;
