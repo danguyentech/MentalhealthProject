@@ -11,17 +11,18 @@ let category = [
     'suicide'
 ]
 
-function filterResources() {
-    
-    let resourceTypes = ['depression', 'anxiety', 'mindfulness']
-    let selection1 = document.getElementById("resourceDropDown1");
-    let selection2 = document.getElementById("resourceDropDown2");
-    let resourceData = { mindfulness: 'mindfullness data' ,depression: 'depressionData' , anxiety: 'anxietyInformation' }
-    let container = document.getElementById('container')
-    container.innerHTML=''
-    let filteredResources = resourceTypes.filter((type) =>  {
-        return type === selection1.value || type === selection2.value || selection1.value==='all'
-    })
+    function filterResources() {
+        let selection1 = document.getElementById("resourceDropDown1");
+        let selection2 = document.getElementById("resourceDropDown2");
+        let resources = document.getElementsByClassName("resource");
+        for (element of resources) {
+            if (element.id !== selection1.value && element.id !== selection2.value && selection1.value !== "all") {
+                element.classList.add("hidden");
+            } else {
+                element.classList.remove("hidden");
+            }
+        }
+    }
 
     for (resource of filteredResources) {
         let resourceDiv = document.createElement('div')
@@ -34,8 +35,6 @@ function filterResources() {
         resourceDiv.appendChild(innerDiv)
     }
 
-    
-}
 function clearFilter() {
     let dropDownOption = document.getElementById('all')
     dropDownOption.selected = "selected"
@@ -58,7 +57,7 @@ function loadPage() {
         selection1.appendChild(option1)
         selection2.appendChild(option2)
         filterResources()
-    }
+    })
 }
 
 // Self-Management, Cognitive Modification, Skills Training, Illness Management, Passive-Symptom Tracking
