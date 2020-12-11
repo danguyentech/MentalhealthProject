@@ -392,6 +392,7 @@ ul a:hover {
   display: flex;
   margin-top: 1em;
   margin-bottom: 1em;
+  animation: slideInFromBottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .picture{
@@ -402,4 +403,13 @@ ul a:hover {
 
 .feature{
   font-size: 2em;
+  
+}
+
+.footer{
+  background-color: #002240;
+  color: #fff;
+}
+.footer a{
+  color: #fff;
 }

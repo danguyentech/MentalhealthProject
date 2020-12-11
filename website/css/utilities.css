@@ -4,9 +4,7 @@
   overflow: auto;
   padding: 0 40px;
 }
-.container.flex {
-  overflow: hidden;
-}
+
 .card {
   background-color: #fff;
   color: #333;
