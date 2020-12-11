@@ -136,7 +136,7 @@ function results() {
 }
 
 function buildResources(resources) {
-    for (resource of Object.keys(resource)); {
+    for (resource of Object.keys(resources)) {
         searchResource(resources[resource])
     }
     console.log(resourceResults);

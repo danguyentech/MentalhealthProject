@@ -17,7 +17,18 @@
     </head>
 
     <body onload="fetchResources()">
-        <div>
+        <div class="navbar">
+            <div class="container flex">
+                <h1><a href='index.html' class="logo">MentalHealthYYC</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="questionnaire.html">Questionnaire</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="dropdown">
             <select onChange="filterResources()" id="resourceDropDown1">
                 <option value="all">All</option>
                 <option value="depression">Depression</option>
@@ -25,7 +36,9 @@
                 <option value="stress">Stress</option>
                 <option value="mindfulness">Mindfulness</option>
                 <option value="productivity">Productivity</option>
-                <option value="substanceuse"> Substance Use and Addiction</option>
+                <option value="substanceuse">
+                    Substance Use and Addiction
+                </option>
                 <option value="trauma">Trauma</option>
                 <option value="chronicpain">Chronic Pain</option>
                 <option value="chronicillness">Chronic Illness</option>
@@ -33,14 +46,15 @@
                 <option value="eatingdisorders">Eating Disorders</option>
                 <option value="suicide">Suicide Prevention</option>
             </select>
-            
             <select onChange="filterResources()" id="resourceDropDown2">
                 <option value="depression">Depression</option>
                 <option value="anxiety">Anxiety</option>
                 <option value="stress">Stress</option>
                 <option value="mindfulness">Mindfulness</option>
                 <option value="productivity">Productivity</option>
-                <option value="substanceuse"> Substance Use and Addiction</option>
+                <option value="substanceuse">
+                    Substance Use and Addiction
+                </option>
                 <option value="trauma">Trauma</option>
                 <option value="chronicpain">Chronic Pain</option>
                 <option value="chronicillness">Chronic Illness</option>
@@ -51,16 +65,26 @@
         </div>
 
         <div class="container">
-            <div id="depression" class="resource">Depression</div>
-            <div id="anxiety" class="resource">Anxiety</div>
-            <div id="stress" class="resource">Stress</div>
-            <div id="mindfulness" class="resource">Mindfulness</div>
-            <div id="substanceuse" class="resource">Substance Use and Addiction</div>
-            <div id="trauma" class="resource">Trauma</div>
-            <div id="chronicpain" class="resource">Chronic Pain</div>
-            <div id="loneliness" class="resource">Loneliness</div>
-            <div id="eatingdisorders" class="resource">Eating Disorders</div>
-            <div id="suicide" class="resource">Suicide Prevention</div>
+            <h2 id="depressiont" class="resourceTitle">Depression</h2>
+            <div id="depression" class="resource card-group"></div>
+            <h2 id="anxietyt" class="resourceTitle">Anxiety</h2>
+            <div id="anxiety" class="resource card-group"></div>
+            <h2 id="stresst" class="resourceTitle">Stress</h2>
+            <div id="stress" class="resource card-group"></div>
+            <h2 id="mindfulnesst" class="resourceTitle">Mindfulness</h2>
+            <div id="mindfulness" class="resource card-group"></div>
+            <h2 id="substanceuset" class="resourceTitle">Substance Use and Addiction</h2>
+            <div id="substanceuse" class="resource card-group"></div>
+            <h2 id="traumat" class="resourceTitle">Trauma</h2>
+            <div id="trauma" class="resource card-group"></div>
+            <h2 id="chronicpaint" class="resource">Chronic Pain</h2>
+            <div id="chronicpain" class="resource card-group"></div>
+            <h2 id="lonelinesst" class="resource">Loneliness</h2>
+            <div id="loneliness" class="resource card-group"></div>
+            <h2 id="eatingdisorderst" class="resource">Eating Disorders</h2>
+            <div id="eatingdisorders" class="resource card-group"></div>
+            <h2 class="resource">Suicide Prevention</h2>
+            <div id="suicide" class="resource card-group"></div>
         </div>
     </body>
 </html>
