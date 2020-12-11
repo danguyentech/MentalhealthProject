@@ -192,7 +192,3 @@ function makeResource(resource) {
 
     return resourceDiv
 }
-
-
-
-
