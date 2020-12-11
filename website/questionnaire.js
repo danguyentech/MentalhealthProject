@@ -136,8 +136,8 @@ function results() {
 }
 
 function buildResources(resources) {
-    for (x = 0; x < resources.length; x++) {
-        searchResource(resources[x])
+    for (resource of Object.keys(resource); x < resources.length; x++) {
+        searchResource(resources[resource])
     }
     console.log(resourceResults);
     let randomNumber1=Math.floor(Math.random()*resourceResults.length+1)
